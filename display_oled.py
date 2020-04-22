@@ -91,7 +91,7 @@ while True:
 
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
     draw.text((x, top + 0), "COVID-19 Tracker", font=font, fill=255)
-    draw.text((x, top + 8), "Created by Julian Bruegger", font=font, fill=255)
+    draw.text((x, top + 8), "Created by:", font=font, fill=255)
     draw.text((x, top + 16), "Julian Bruegger", font=font, fill=255)
     draw.text((x, top + 24), "Adapted for OLED by:", font=font, fill=255)
     draw.text((x, top + 32), "Harrison Thow", font=font, fill=255)
