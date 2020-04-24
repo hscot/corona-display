@@ -66,9 +66,9 @@ while True:
 
         #Begin display information
         draw.text((x, top + 0), (first_c), font=font, fill=255)
-        draw.text((x, top + 8), "Infected " + (infections_c) " +" (today_c), font=font, fill=255)
+        draw.text((x, top + 8), "Infected " + (infections_c) " +" + (today_c), font=font, fill=255)
         draw.text((x, top + 16), "Worldwide", font=font, fill=255)
-        draw.text((x, top + 24) "Infected " + (infections_w) " +" (today_w), font=font, fill=255)
+        draw.text((x, top + 24) "Infected " + (infections_w) " +" + (today_w), font=font, fill=255)
         disp.image(image)
         disp.show()
         time.sleep(10)
