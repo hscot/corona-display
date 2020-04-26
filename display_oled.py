@@ -40,51 +40,52 @@ font = ImageFont.load_default()
 
 
 #Here is the updated code from the original LCD display, updated for use with the OLED display
+for j in range (400):
+    for i in range(5):
+        from module import *
+        #Draw a black filled box to clear the image.
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+        time.sleep(1)
 
-for i in range(30):
-    #Draw a black filled box to clear the image.
-    draw.rectangle((0, 0, width, height), outline=0, fill=0)
-    time.sleep(1)
+        #Begin display information
+        draw.text((x, top + 0), (first_c), font=font, fill=255)
+        draw.text((x, top + 8), "Infected " + (infections_c) " +" (today_c), font=font, fill=255)
+        draw.text((x, top + 16), "Worldwide", font=font, fill=255)
+        draw.text((x, top + 24) "Infected " + (infections_w) " +" (today_w), font=font, fill=255)
+        disp.image(image)
+        disp.show()
+        time.sleep(5)
 
-    #Begin display information
-    draw.text((x, top + 0), (first_c), font=font, fill=255)
-    draw.text((x, top + 8), "Infected " + (infections_c) " +" (today_c), font=font, fill=255)
-    draw.text((x, top + 16), "Worldwide", font=font, fill=255)
-    draw.text((x, top + 24) "Infected " + (infections_w) " +" (today_w), font=font, fill=255)
-    disp.image(image)
-    disp.show()
+        #The same code as before, but this one is displaying death information
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+        draw.text((x, top + 0), (first_c), font=font, fill=255)
+        draw.text((x, top + 8), ("Deaths ") + (deaths_c), font=font, fill=255)
+        draw.text((x, top + 16), "Worldwide", font=font, fill=255)
+        draw.text((x, top + 24), ("Deaths ") + (deaths_w), font=font, fill=255)
+        disp.image(image)
+        disp.show()
+        time.sleep(5)
+        
+        #Recoveries
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+        draw.text((x, top + 0), (first_c), font=font, fill=255)
+        draw.text((x, top + 8), "Recovered" + (survived_c), font=font, fill=255)
+        draw.text((x, top + 16), "Worldwide", font=font, fill=255)
+        draw.text((x, top + 24) (survived_w), font=font, fill=255)
+        disp.image(image)
+        disp.show()
+        time.sleep(5)
+
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+        draw.text((x, top + 0), "COVID-19 Tracker", font=font, fill=255)
+        draw.text((x, top + 8), "By Julain Bruegger", font=font, fill=255)
+        draw.text((x, top + 16), "Adapted for OLED", font=font, fill=255)
+        draw.text((x, top + 24), "By Harrison Thow", font=font, fill=255)
+        disp.image(image)
+        disp.show()
+        print(i)    
+        time.sleep(5)
     time.sleep(5)
-
-    #The same code as before, but this one is displaying death information
-    draw.rectangle((0, 0, width, height), outline=0, fill=0)
-    draw.text((x, top + 0), (first_c), font=font, fill=255)
-    draw.text((x, top + 8), ("Deaths ") + (deaths_c), font=font, fill=255)
-    draw.text((x, top + 16), "Worldwide", font=font, fill=255)
-    draw.text((x, top + 24), ("Deaths ") + (deaths_w), font=font, fill=255)
-    disp.image(image)
-    disp.show()
-    time.sleep(5)
-    
-    #Recoveries
-    draw.rectangle((0, 0, width, height), outline=0, fill=0)
-    draw.text((x, top + 0), (first_c), font=font, fill=255)
-    draw.text((x, top + 8), "Recovered" + (survived_c), font=font, fill=255)
-    draw.text((x, top + 16), "Worldwide", font=font, fill=255)
-    draw.text((x, top + 24) (survived_w), font=font, fill=255)
-    disp.image(image)
-    disp.show()
-    time.sleep(5)
-
-    draw.rectangle((0, 0, width, height), outline=0, fill=0)
-    draw.text((x, top + 0), "COVID-19 Tracker", font=font, fill=255)
-    draw.text((x, top + 8), "By Julain Bruegger", font=font, fill=255)
-    draw.text((x, top + 16), "Adapted for OLED", font=font, fill=255)
-    draw.text((x, top + 24), "By Harrison Thow", font=font, fill=255)
-    disp.image(image)
-    disp.show()
-    print(i)    
-    time.sleep(5)
-time.sleep(5)
-
-    
+print("J is" + j)
+        
 
