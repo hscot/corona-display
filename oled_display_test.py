@@ -42,27 +42,43 @@ font = ImageFont.load_default()
 #Here is the updated code from the original LCD display, updated for use with the OLED display
 while True:
     for i in range(5):
-        url_c = "https://corona.help/country/united-states"
-        # Insert your Population here
-        population_c = "327167434"
-        population_w = "7770173166"
-        url_w ="https://corona.help/"
 
+        # Insert your country URL here
+        url_b = "https://corona.help/country/united-states"
+        url_c = "https://corona.help/country/united-states"
+
+        # Insert your country Population here
+        population_c = "8173166"
+        population_w = "7770173166" # World-population
+        url_w ="https://corona.help/"
+        # Your Country-Code
+        cc = "US"
+
+        page_b = requests.get(url_b)
+        soup_b = BeautifulSoup(page_b.text, 'html.parser')
         page_c = requests.get(url_c)
         soup_c = BeautifulSoup(page_c.text, 'html.parser')
         page_w = requests.get(url_w)
         soup_w = BeautifulSoup(page_w.text, 'html.parser')
 
-        #print (soup_c)
+        #print (soup_c)ython
 
-        country = soup_c.select('h2')[0].text.strip()
+        country_b = soup_b.select('h2')[0].text.strip()
+        infections_b = soup_b.select('h2')[1].text.strip()
+        deaths_b = soup_b.select('h2')[3].text.strip()
+        survived_b = soup_b.select('h2')[5].text.strip()
+        today_b = soup_b.select('h2')[2].text.strip()
+
+        first_b = country_b.rsplit(' ',1)[0]
+
+        country_c = soup_c.select('h2')[0].text.strip()
         infections_c = soup_c.select('h2')[1].text.strip()
         deaths_c = soup_c.select('h2')[3].text.strip()
         survived_c = soup_c.select('h2')[5].text.strip()
         today_c = soup_c.select('h2')[2].text.strip()
 
-        first, last = country.split()
-       
+        first_c = country_c.rsplit(' ',1)[0]
+            
         infections_w = soup_w.select('h2')[1].text.strip()
         deaths_w = soup_w.select('h2')[3].text.strip()
         survived_w = soup_w.select('h2')[5].text.strip()
@@ -108,10 +124,7 @@ while True:
         draw.text((x, top + 24), "By Harrison Thow", font=font, fill=255)
         disp.image(image)
         disp.show()
-        print(i)
-
-        if i = 4:
-              print("This should reset the numbers")
+        print(i)    
         time.sleep(5)
     time.sleep(5)
 
