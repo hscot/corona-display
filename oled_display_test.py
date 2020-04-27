@@ -95,7 +95,7 @@ while True:
         draw.text((x, top + 24), "Infected " + (infections_w), font=font, fill=255)
         disp.image(image)
         disp.show()
-        time.sleep(5)
+        time.sleep(10)
 
         #The same code as before, but this one is displaying death information
         draw.rectangle((0, 0, width, height), outline=0, fill=0)
@@ -105,17 +105,17 @@ while True:
         draw.text((x, top + 24), ("Deaths ") + (deaths_w), font=font, fill=255)
         disp.image(image)
         disp.show()
-        time.sleep(5)
+        time.sleep(10)
         
         #Recoveries
         draw.rectangle((0, 0, width, height), outline=0, fill=0)
         draw.text((x, top + 0), (first_c), font=font, fill=255)
-        draw.text((x, top + 8), "Recovered" + (survived_c), font=font, fill=255)
+        draw.text((x, top + 8), "Recovered " + (survived_c), font=font, fill=255)
         draw.text((x, top + 16), "Worldwide", font=font, fill=255)
         draw.text((x, top + 24), (survived_w), font=font, fill=255)
         disp.image(image)
         disp.show()
-        time.sleep(5)
+        time.sleep(10)
 
         draw.rectangle((0, 0, width, height), outline=0, fill=0)
         draw.text((x, top + 0), "COVID-19 Tracker", font=font, fill=255)
